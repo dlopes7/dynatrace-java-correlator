@@ -19,12 +19,12 @@ This is intended to be used in a very specific case:
 
 #### Port
 
-By default, 8080, can be changed with `-Dserver.port` 
+* By default 8080, can be changed with `-Dserver.port` 
 
 #### Downstream
 
-Hostname: cyberbankCoreAlias, can be changed with `-Dcorrelator.hostname`
-Port: 4444, can be changed with `-Dcorrelator.port`
+* Hostname: cyberbankCoreAlias, can be changed with `-Dcorrelator.hostname`
+* Port: 4444, can be changed with `-Dcorrelator.port`
 
 #### Logging
 
