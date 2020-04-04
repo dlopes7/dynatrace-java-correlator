@@ -1,6 +1,7 @@
 package com.dynatrace.custom.correlator.controller;
 
 import com.dynatrace.custom.correlator.service.Correlator;
+import model.DynatraceTag;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -21,16 +22,18 @@ public class DynatraceController {
     private HttpServletRequest context;
 
     @GetMapping("/**")
-    public String generateTag() {
+    public DynatraceTag generateTag() {
 
         logger.info(String.format("Received %s on '%s' from %s",
                 context.getMethod(),
                 context.getRequestURL().toString(),
                 context.getRemoteAddr()));
 
-        return Correlator.correlate(
+
+        String tag = Correlator.correlate(
                 env.getProperty("correlator.hostname"),
                 env.getProperty("correlator.port")
         );
+        return new DynatraceTag(tag);
     }
 }
