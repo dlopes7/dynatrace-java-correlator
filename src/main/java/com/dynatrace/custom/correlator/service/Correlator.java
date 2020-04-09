@@ -11,11 +11,11 @@ public class Correlator {
     static Logger logger = Logger.getLogger(Correlator.class);
     public static final OneAgentSDK sdk = OneAgentSDKFactory.createInstance();
 
-    public static String correlate(String hostname, String port) {
+    public static String correlate(String endpoint, String hostname, String port) {
 
         OutgoingRemoteCallTracer tracer = sdk.traceOutgoingRemoteCall("core",
                 "Core",
-                String.format("http://%s:%s/CMM_SERVICES", hostname, port),
+                endpoint,
                 ChannelType.TCP_IP,
                 String.format("%s:%s", hostname, port));
 

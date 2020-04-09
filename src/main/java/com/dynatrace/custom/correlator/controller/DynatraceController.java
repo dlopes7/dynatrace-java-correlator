@@ -31,6 +31,7 @@ public class DynatraceController {
 
 
         String tag = Correlator.correlate(
+                env.getProperty("correlator.endpoint"),
                 env.getProperty("correlator.hostname"),
                 env.getProperty("correlator.port")
         );

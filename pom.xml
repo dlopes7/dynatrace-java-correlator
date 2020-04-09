@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.dynatrace.custom</groupId>
     <artifactId>correlator</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <name>correlator</name>
     <description>Dynatrace correlator</description>
 
